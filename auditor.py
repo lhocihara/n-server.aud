@@ -14,7 +14,7 @@ t.log_cadastro_usuario({"id": "5d2d2adba3587900042e75b4"},datetime.now().strftim
 t.log_cadastro_usuario({"id": "5d34c11ee936920004aaa4a9"},datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 t.log_cadastro_usuario({"id": "5d4f2a90ef361b00042a1266"},datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 
-@sched.scheduled_job('interval', seconds = 3)
+@sched.scheduled_job('interval', seconds = 10)
 def job_atualizador():
   print("\n\nJob adição de bloco\n-------------")
   # criando variável temporaria para receber os dados que entrarão neste bloco atual e preparando a lista para as próximas transações
