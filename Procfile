@@ -1,1 +1,1 @@
-worker: python auditor.py
+worker: python auditor_copy.py
