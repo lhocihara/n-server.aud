@@ -1,5 +1,5 @@
 import os
-from main import app
+from auditor import app
 
 envi_prod = True
 # ----------------------------------------------------------
