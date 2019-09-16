@@ -7,7 +7,7 @@ from datetime import datetime
 from transacoes import lista_transacoes
 from blockchain_3 import Blockchain
 
-app = Flask("n-server")
+app = Flask("n-server-aud")
 app.config.from_object('settings')
 
 blch = Blockchain()
