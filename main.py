@@ -1,7 +1,14 @@
+import os, pymongo
+from flask import Flask, jsonify, request, render_template
+from flask_json_schema import JsonSchema, JsonValidationError
+
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import datetime
 from transacoes import lista_transacoes
 from blockchain_3 import Blockchain
+
+app = Flask("n-server")
+app.config.from_object('settings')
 
 blch = Blockchain()
 sched = BlockingScheduler()
