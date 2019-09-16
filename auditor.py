@@ -4,6 +4,15 @@ from datetime import datetime
 from transacoes import lista_transacoes
 from blockchain_3 import Blockchain
 
+from flask import Flask, jsonify, request, render_template
+from flask_json_schema import JsonSchema, JsonValidationError
+
+## ----------------------------------------------------------
+## Instanciando a API
+## ----------------------------------------------------------
+app = Flask("n-server-aud")
+app.config.from_object('settings')
+
 blch = Blockchain()
 sched = BlockingScheduler()
 t = lista_transacoes()
