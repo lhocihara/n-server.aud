@@ -29,7 +29,7 @@ def validation_error(e):
 ## ----------------------------------------------------------
 
 ##Definição do endpoint
-@app.route("/panic", methods=['GET'])
+@app.route("/pani", methods=['GET'])
 def nao_entre_em_panico():
     return jsonify({"message": "Nao entre em panico, isso é soh um retorno padrao"})
 
