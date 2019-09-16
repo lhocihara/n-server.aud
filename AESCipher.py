@@ -12,16 +12,16 @@ pad = lambda s: s + (BLOCK_SIZE - len(s) % BLOCK_SIZE) * PADDING
 class AESCipher:
   def __init__(self, key): 
         self.bs = 32
-        self.key = md5(key.encode('utf8')).hexdigest()
+        self.key = self._pad(key).encode("utf8")
 
   def encrypt(self, raw):
     raw = self._pad('{}'.format(raw))
     iv = Random.new().read(AES.block_size)
     cipher = AES.new(self.key, AES.MODE_CBC, iv)
-    return b64encode(iv + cipher.encrypt(raw))
+    return b64encode(iv + cipher.encrypt(raw.encode("utf8")))
 
   def decrypt(self, enc):
-    enc = b64decode(enc)
+    enc = b64decode(enc.decode("utf8"))
     iv = enc[:AES.block_size]
     cipher = AES.new(self.key, AES.MODE_CBC, iv)
 

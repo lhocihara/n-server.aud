@@ -29,11 +29,7 @@ def job_atualizador():
 
   # verifica se há transações para serem armazenadas no bloco, caso não tiver, não há necessidade de criar um novo bloco.
   if (len(transacoes_temp)):
-    # print("\nTransações temporárias:")
-    # print(transacoes_temp)
-    # faz o processo de criação do bloco
-    
-    # blch.adicionar_novo_bloco(transacoes_temp)
+    # Adicionando um novo bloco à chain
     blch.add_new_block(transacoes_temp)
     
     # print(" \n\nminha lista de blocos é:")
@@ -55,19 +51,20 @@ def job_atualizador():
 
     # print(blch.get_all())
   else:
-    print("\n\ntransações: Lista vazia")
+    # Informando que a lista de transções está vazia
+    print("\n\nLista de transações atuais está vazia...")
 
 
-# resto do tratador de blockchain
-@sched.scheduled_job('interval', seconds = 0.5)
-def tester_transacao():
+# # resto do tratador de blockchain
+# @sched.scheduled_job('interval', seconds = 0.5)
+# def tester_transacao():
 
-  # manipulações de variáveis teste
-  global c
+#   # manipulações de variáveis teste
+#   global c
 
-  # manipulações de variáveis teste
-  c += 1
-  t.log_cadastro_usuario({"id": str(c)},datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
+#   # manipulações de variáveis teste
+#   c += 1
+#   t.log_cadastro_usuario({"id": str(c)},datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 
 
 # iniciando o job
