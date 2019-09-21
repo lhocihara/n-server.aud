@@ -1,12 +1,12 @@
 import os, pymongo
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import datetime
-from transacoes import lista_transacoes
+from tipos_transacoes import Tipos_Transacoes
 from blockchain_3 import Blockchain
 
 blch = Blockchain()
 sched = BlockingScheduler()
-t = lista_transacoes()
+t = Tipos_Transacoes()
 
 # manipulações de variáveis teste
 c = 0
