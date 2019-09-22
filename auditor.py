@@ -10,9 +10,9 @@ t = Tipos_Transacoes()
 
 # manipulações de variáveis teste
 c = 0
-t.log_interno_cadastro_inicial_usuario({"id": "5d2d2adba3587900042e75b4"},datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
-t.log_interno_cadastro_inicial_usuario({"id": "5d34c11ee936920004aaa4a9"},datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
-t.log_interno_cadastro_inicial_usuario({"id": "5d4f2a90ef361b00042a1266"},datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
+t.log_interno_cadastro_inicial_usuario("5d2d2adba3587900042e75b4")
+t.log_interno_cadastro_inicial_usuario("5d34c11ee936920004aaa4a9")
+t.log_interno_cadastro_inicial_usuario("5d4f2a90ef361b00042a1266")
 
 @sched.scheduled_job('interval', seconds = 10)
 def job_atualizador():
