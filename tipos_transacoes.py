@@ -162,7 +162,7 @@ class Tipos_Transacoes:
     }
     self.transacoes.append(formato_log)
 
-  def log_interno_exclusao_vinculo(self, id_usuario, id_projeto, id_vinculo,, t = ""):
+  def log_interno_exclusao_vinculo(self, id_usuario, id_projeto, id_vinculo, t = ""):
     """Utilizada para registrar logs de exclusão de vínculo de pessoa com parceiros.
     
     `param id_usuario` - recebe o valor em string do ObjectId do documento dentro da collection de Pessoa que está no vínculo.
