@@ -196,14 +196,14 @@ class Tipos_Transacoes:
     }
     self.transacoes.append(formato_log)
 
-  def log_externo_consulta_dados_usuario(self, id_usuario, id_projeto, id_vinculo, t = ""):
+  def log_externo_consulta_dados_usuario(self, id_usuario, id_projeto, id_vinculo,campos_consultados, t = ""):
     timestamp_do_evento = t if t != "" else datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
     formato_log = {
       "tipo_log": "externo_consulta_dados_usuario",
       "id_usuario": id_usuario,
       "id_projeto": id_projeto,
       "id_vinculo": id_vinculo,
-      "campos_consultados": dados["campos_consultados"],
+      "campos_consultados": campos_consultados,
       "datetime": timestamp_do_evento
     }
     self.transacoes.append(formato_log)
